@@ -12,20 +12,25 @@
     <div class="menu">
       <a href="#proposito">Propósito</a>
       <a href="#vision">Visión</a>
+      <a href="#noticias">Noticias</a>
+      <a href="#eventos">Eventos</a>
       <a href="#opiniones">Opiniones</a>
-      <a href="#tienda">Tienda <span id="contador" class="badge">0</span></a>
+      <a href="#tienda">Tienda</a>
     </div>
+    <button id="abrir-carrito" class="carrito-btn" type="button" aria-label="Abrir carrito" aria-controls="panel" aria-expanded="false">
+      🛒 <span id="contador" class="badge">0</span>
+    </button>
   </nav>
 
   <header class="hero">
     <div class="burbuja b1"></div>
     <div class="burbuja b2"></div>
-    <p class="etiqueta">Proyecto de práctica</p>
+    <p class="etiqueta">Sitio ficticio con fines de práctica</p>
     <h1>Partido Horizonte</h1>
     <p class="subtitulo">Ideas claras para una ciudad que avanza, escuchando a la gente.</p>
     <div class="acciones">
       <a href="#opiniones" class="boton principal">Cuéntanos tu opinión</a>
-      <a href="#tienda" class="boton secundario">Ver tienda demo</a>
+      <a href="#tienda" class="boton secundario">Ver tienda</a>
     </div>
   </header>
 
@@ -51,6 +56,56 @@
           <p>Ciudades más verdes, con agua limpia y espacios públicos para todos.</p>
         </article>
       </div>
+    </section>
+
+    <section id="noticias">
+      <h2>Noticias</h2>
+      <p class="nota">Contenido de ejemplo.</p>
+      <div class="cards">
+        <article>
+          <h3>Jornada de escucha en los barrios</h3>
+          <p>Visitamos cinco barrios para conocer las necesidades de sus vecinos. Las ideas recogidas se publicarán en esta página.</p>
+        </article>
+        <article>
+          <h3>Propuesta sobre transporte</h3>
+          <p>Presentamos un borrador con rutas nuevas y horarios ampliados. Aún está abierto a comentarios.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="eventos">
+      <h2>Próximos eventos</h2>
+      <p class="nota">Fechas de ejemplo, por definir.</p>
+      <div class="cards">
+        <article>
+          <h3>Encuentro de vecinos</h3>
+          <p>Un espacio abierto para hablar de los problemas de cada barrio. Fecha por definir.</p>
+        </article>
+        <article>
+          <h3>Debate juvenil</h3>
+          <p>Jóvenes de distintas zonas presentan sus ideas sobre empleo y educación. Fecha por definir.</p>
+        </article>
+        <article>
+          <h3>Caminata por el parque</h3>
+          <p>Recorrido para revisar el estado de los espacios públicos. Fecha por definir.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="preguntas">
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Cómo puedo participar?</summary>
+        <p>Puedes dejar tu opinión en la sección Opiniones. En una versión real, aquí iría cómo afiliarse o asistir a un evento.</p>
+      </details>
+      <details>
+        <summary>¿Dónde se publican las propuestas?</summary>
+        <p>Las propuestas se publicarían en la sección Visión y en Noticias, con fecha y fuente.</p>
+      </details>
+      <details>
+        <summary>¿Esta página recoge datos personales?</summary>
+        <p>No. Es un sitio de práctica: las opiniones solo se ven en tu pantalla y no se guardan.</p>
+      </details>
     </section>
 
     <section id="opiniones">
@@ -81,27 +136,48 @@
           <div class="imagen">👕</div>
           <h3>Camiseta</h3>
           <p class="precio">$45.000</p>
-          <button class="agregar" data-precio="45000">Agregar</button>
+          <button class="agregar" data-nombre="Camiseta" data-precio="45000">Agregar</button>
         </article>
         <article class="producto">
           <div class="imagen">☕</div>
           <h3>Taza</h3>
           <p class="precio">$25.000</p>
-          <button class="agregar" data-precio="25000">Agregar</button>
+          <button class="agregar" data-nombre="Taza" data-precio="25000">Agregar</button>
         </article>
         <article class="producto">
           <div class="imagen">🧢</div>
           <h3>Gorra</h3>
           <p class="precio">$35.000</p>
-          <button class="agregar" data-precio="35000">Agregar</button>
+          <button class="agregar" data-nombre="Gorra" data-precio="35000">Agregar</button>
         </article>
       </div>
-      <div class="carrito">
-        <p>En el carrito: <strong id="cantidad">0</strong> producto(s). Total: <strong id="total">$0</strong></p>
-        <p class="nota">Esta demo no pide datos de compra ni procesa pagos.</p>
-      </div>
+    </section>
+
+    <section id="pago" class="oculto">
+      <h2>Resumen del pedido</h2>
+      <div id="resumen"></div>
+      <p class="nota">Demostración: este paso solo muestra el resumen. No pide datos personales, no procesa pagos y no envía pedidos.</p>
+      <button id="simular" type="button">Simular pedido</button>
+      <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Correo de ejemplo: contacto@ejemplo.com</p>
     </section>
   </main>
+
+  <aside id="panel" class="panel" aria-hidden="true" aria-labelledby="titulo-carrito">
+    <div class="panel-cabecera">
+      <h2 id="titulo-carrito">Tu carrito</h2>
+      <button id="cerrar" class="cerrar" type="button" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div id="items"></div>
+    <p class="total-linea">Total: <strong id="total">$0</strong></p>
+    <button id="ir-pago" class="boton-full" type="button">Ver resumen de pago</button>
+    <p class="nota">Demostración: nada se cobra ni se envía.</p>
+  </aside>
+  <div id="fondo" class="fondo" aria-hidden="true"></div>
 
   <footer>
     <p>Partido ficticio creado con fines de práctica.</p>
