@@ -1,9 +1,9 @@
 :root {
-  --verde: #1b5e4b;
-  --verde-oscuro: #123f33;
-  --amarillo: #f2b630;
-  --texto: #1d2b2f;
-  --fondo: #fafaf7;
+  --verde: #5b6b5a;
+  --verde-oscuro: #3e4a3d;
+  --amarillo: #c9a66b;
+  --texto: #2f2d2a;
+  --fondo: #f4f1ea;
 }
 
 * {
@@ -564,4 +564,36 @@ footer {
   .hero {
     padding: 60px 16px 70px;
   }
+}
+
+body {
+  background: var(--fondo);
+}
+
+.hero {
+  background: linear-gradient(-45deg, #5b6b5a, #7d8c76, #3e4a3d, #5b6b5a);
+  background-size: 300% 300%;
+}
+
+.boton.principal {
+  box-shadow: 0 6px 18px rgba(201, 166, 107, 0.45);
+}
+
+article,
+details {
+  background: #fbfaf6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.carrito {
+  background: #ebe6da;
+}
+
+.producto .imagen {
+  background: linear-gradient(135deg, #e3e8dc, #e8dcc2);
+}
+
+footer {
+  background: var(--verde-oscuro);
+  color: #e3e8dc;
 }
